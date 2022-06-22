@@ -32,9 +32,8 @@ public class VoteListener implements Listener {
         try {
             EmbedBuilder builder = new EmbedBuilder();
             builder.setColor(Color.magenta)
-                    .setTitle("投票通知 投票ありがとう!!")
-                    .setDescription("投票してくれたユーザー: " + vote.getUsername() +
-                            "\n投票してくれたサービス: " + vote.getServiceName());
+                    .setTitle(vote.getUsername() + "さんが" + vote.getServiceName() + "で「たけのこサーバー」に投票しました！")
+                    .setDescription("ありがとうございます！！\n**投票ページリスト**\nMinecraft.jp : https://minecraft.jp/servers/takenoko.ramune.tokyo:45357\nMonocraft.net : https://monocraft.net/servers/AVPgLD1HMJ2mCjD5rFp4");
             TakenokoEssential.getJDA().getNewsChannelById(TakenokoEssential.getConfigFile().VOTE_ANNOUNCE).sendMessageEmbeds(builder.build()).queue();
         } catch (Exception ignored) {
         }
