@@ -1,0 +1,9 @@
+name: TakenokoEssential
+version: '${project.version}'
+main: toyko.ramune.takenokoessential.TakenokoEssential
+api-version: 1.16
+depend: [ 'LuckPerms']
+softdepend: ['BungeeTabListPlus', 'Votifier']
+commands:
+  menu:
+    description: open Menu

@@ -1,0 +1,31 @@
+config:
+
+  database:
+    host: 127.0.0.1
+    port: 3306
+    database: mc
+    username: mc
+    password: password
+
+  vote-reward:
+    enable: true
+
+  discord:
+    token: "TOKEN"
+    vote-announce: 971752377780666428
+
+  creative-server-mode:
+    enable: false
+
+  announce:
+    server-restart: true
+    sittemasitaka: false
+
+  spawn-location:
+    force-teleport: false
+    world: world
+    x: 0.5
+    y: 81.0
+    z: 0.5
+    yaw: 0
+    pitch: 0
