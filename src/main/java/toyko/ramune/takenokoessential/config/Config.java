@@ -6,7 +6,7 @@ public class Config {
 
     private FileConfiguration config;
 
-    public String  MYSQL_HOST, MYSQL_DATABASE, MYSQL_USERNAME, MYSQL_PASSWORD, TOKEN, VOTE_ANNOUNCE, SPAWN_LOCATION_WORLD;
+    public String  MYSQL_HOST, MYSQL_DATABASE, MYSQL_USERNAME, MYSQL_PASSWORD, SIDEBAR, TOKEN, VOTE_ANNOUNCE, SPAWN_LOCATION_WORLD;
 
     public int     MYSQL_PORT, SPAWN_LOCATION_YAW, SPAWN_LOCATION_PITCH;
 
@@ -25,6 +25,7 @@ public class Config {
         MYSQL_DATABASE                  = config.getString("config.database.database");
         MYSQL_USERNAME                  = config.getString("config.database.username");
         MYSQL_PASSWORD                  = config.getString("config.database.password");
+        SIDEBAR                         = config.getString("config.sidebar");
         TOKEN                           = config.getString("config.discord.token");
         VOTE_REWARD_ENABLE              = config.getBoolean("config.vote-reward.enable");
         VOTE_ANNOUNCE                   = config.getString("config.discord.vote-announce");

@@ -39,5 +39,10 @@ public class PlayerJoinListener implements Listener {
             player.teleport(location);
         } catch (Exception ignored) {
         }
+        if (player.hasPlayedBefore()) {
+            event.setJoinMessage(ChatColor.GRAY + "[" + ChatColor.GREEN + "+" + ChatColor.GRAY + "] " + player.getName() + "がログインしました");
+        } else {
+            event.setJoinMessage(ChatColor.GRAY + "[" + ChatColor.GREEN + "+" + ChatColor.GRAY + "] " + player.getName() + "が初ログインしました");
+        }
     }
 }

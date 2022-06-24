@@ -13,6 +13,8 @@ import toyko.ramune.takenokoessential.database.DatabaseManager;
 import toyko.ramune.takenokoessential.database.MySQL;
 import toyko.ramune.takenokoessential.listener.ListenerHandler;
 import toyko.ramune.takenokoessential.playtime.PlaytimeRunner;
+import toyko.ramune.takenokoessential.scoreboard.PlayerTabManager;
+import toyko.ramune.takenokoessential.scoreboard.SideBarManager;
 
 public final class TakenokoEssential extends JavaPlugin {
 
@@ -49,6 +51,8 @@ public final class TakenokoEssential extends JavaPlugin {
         getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
         new PlaytimeRunner().run();
         new AnnounceManager(this);
+        SideBarManager.startShowTask();
+        PlayerTabManager.startShowTask();
         getLogger().info("The plugin has been enabled.");
     }
 
