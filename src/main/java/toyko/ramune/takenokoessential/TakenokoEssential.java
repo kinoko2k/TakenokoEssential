@@ -58,8 +58,8 @@ public final class TakenokoEssential extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        jda.shutdownNow();
         try {
+            jda.shutdownNow();
             jda.awaitStatus(JDA.Status.SHUTDOWN);
         } catch (Exception ignored) {
         }
