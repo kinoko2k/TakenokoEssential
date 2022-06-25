@@ -8,7 +8,7 @@ public class PlaytimeRunner implements Runnable {
 
     @Override
     public void run() {
-        Bukkit.getScheduler().runTaskTimerAsynchronously(TakenokoEssential.getInstance(), this::addPlaytime, 1 * 20, 60 * 20);
+        Bukkit.getScheduler().runTaskTimerAsynchronously(TakenokoEssential.getInstance(), this::addPlaytime, 20, 60 * 20);
     }
 
     private void addPlaytime() {

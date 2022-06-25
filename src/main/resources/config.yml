@@ -16,9 +16,6 @@ config:
     token: "TOKEN"
     vote-announce: 971752377780666428
 
-  creative-server-mode:
-    enable: false
-
   announce:
     server-restart: true
     sittemasitaka: false
