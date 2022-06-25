@@ -21,6 +21,10 @@ public class ScoreboardBuilder {
         this.displayName = displayName;
     }
 
+    public ScoreboardBuilder(Scoreboard scoreboard) {
+
+    }
+
     public void addLine(String line) {
         lines.add(line);
     }

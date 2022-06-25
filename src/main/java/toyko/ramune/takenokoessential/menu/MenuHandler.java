@@ -70,34 +70,6 @@ public class MenuHandler implements Listener {
                 player.sendMessage(ChatColor.RED+"サーバー接続にエラーが発生しました");
             }
             player.closeInventory();
-        } else if (displayName.equals(Item.getCreativeServer().getItemMeta().getDisplayName())) {
-            try {
-                ByteArrayOutputStream b = new ByteArrayOutputStream();
-                DataOutputStream out = new DataOutputStream(b);
-                out.writeUTF("Connect");
-                out.writeUTF("creative");
-                player.sendPluginMessage(TakenokoEssential.getInstance(), "BungeeCord", b.toByteArray());
-                b.close();
-                out.close();
-            }
-            catch (Exception e) {
-                player.sendMessage(ChatColor.RED+"サーバー接続にエラーが発生しました");
-            }
-            player.closeInventory();
-        } else if (displayName.equals(Item.getCreateClaims().getItemMeta().getDisplayName())) {
-            player.getInventory().addItem(new ItemStack(Material.GOLDEN_SHOVEL));
-            player.sendMessage(ChatColor.LIGHT_PURPLE + "1.金のショベルでブロックを左クリックで保護する範囲の角を選択します");
-            player.sendMessage(ChatColor.LIGHT_PURPLE + "2.金のショベルでブロックを左クリックで保護する範囲のもう片方の角を選択します");
-            player.sendMessage(ChatColor.LIGHT_PURPLE + "3.選択された範囲が保護されて、範囲内で建築が可能になります");
-            player.closeInventory();
-        } else if (displayName.equals(Item.getDeleteClaims().getItemMeta().getDisplayName())) {
-            player.performCommand("abandonclaim");
-            player.sendMessage(ChatColor.LIGHT_PURPLE + "自分の立っている位置の保護を削除します");
-            player.closeInventory();
-        } else if (displayName.equals(Item.getCheckClaim().getItemMeta().getDisplayName())) {
-            player.getInventory().addItem(new ItemStack(Material.STICK));
-            player.sendMessage(ChatColor.LIGHT_PURPLE + "棒で調べたい保護のブロックを右クリックすると、詳細の情報が表示されます");
-            player.closeInventory();
         }
     }
 
@@ -126,11 +98,6 @@ public class MenuHandler implements Listener {
         inventory.setItem(12, Item.getVote());
         inventory.setItem(14, Item.getLobbyServer());
         inventory.setItem(15, Item.getSurvivalServer());
-        if (TakenokoEssential.getConfigFile().CREATIVE_SERVER_MODE_ENABLE) {
-            inventory.setItem(21, Item.getCreateClaims());
-            inventory.setItem(22, Item.getDeleteClaims());
-            inventory.setItem(23, Item.getCheckClaim());
-        }
         return inventory;
     }
 }

@@ -66,6 +66,9 @@ public class SideBarManager {
     }
 
     private static void showSideBar(Player player) {
+        if (player.getUniqueId().toString().startsWith("00000000")) {
+            return;
+        }
         String title = titles.get(titlePageCount);
         String line = lines.get(linePageCount);
         ScoreboardBuilder sb = new ScoreboardBuilder("SideBar", DisplaySlot.SIDEBAR, title);

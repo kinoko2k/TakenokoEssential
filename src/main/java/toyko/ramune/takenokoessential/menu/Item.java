@@ -128,45 +128,4 @@ public class Item {
         item.setItemMeta(itemMeta);
         return item;
     }
-
-    // creative
-
-    public static ItemStack getCreateClaims() {
-        ItemStack item = new ItemStack(Material.GOLDEN_SHOVEL);
-        ItemMeta itemMeta = item.getItemMeta();
-        ArrayList<String> lore = new ArrayList<>();
-        itemMeta.setDisplayName(ChatColor.GREEN + "保護を作成する");
-        lore.add(ChatColor.LIGHT_PURPLE + "自分の保護を作成します");
-        lore.add(ChatColor.YELLOW + "");
-        lore.add(ChatColor.YELLOW + "右クリックで作成");
-        itemMeta.setLore(lore);
-        item.setItemMeta(itemMeta);
-        return item;
-    }
-
-    public static ItemStack getDeleteClaims() {
-        ItemStack item = new ItemStack(Material.REDSTONE_BLOCK);
-        ItemMeta itemMeta = item.getItemMeta();
-        ArrayList<String> lore = new ArrayList<>();
-        itemMeta.setDisplayName(ChatColor.GREEN + "保護を削除する");
-        lore.add(ChatColor.LIGHT_PURPLE + "現在立っている位置の保護を削除します");
-        lore.add(ChatColor.YELLOW + "");
-        lore.add(ChatColor.YELLOW + "右クリックで削除");
-        itemMeta.setLore(lore);
-        item.setItemMeta(itemMeta);
-        return item;
-    }
-
-    public static ItemStack getCheckClaim() {
-        ItemStack item = new ItemStack(Material.STICK);
-        ItemMeta itemMeta = item.getItemMeta();
-        ArrayList<String> lore = new ArrayList<>();
-        itemMeta.setDisplayName(ChatColor.GREEN + "保護を確認する");
-        lore.add(ChatColor.LIGHT_PURPLE + "現在立っている位置の保護を確認します");
-        lore.add(ChatColor.YELLOW + "");
-        lore.add(ChatColor.YELLOW + "右クリックで確認");
-        itemMeta.setLore(lore);
-        item.setItemMeta(itemMeta);
-        return item;
-    }
 }
