@@ -33,7 +33,7 @@ public class VoteListener implements Listener {
             EmbedBuilder builder = new EmbedBuilder();
             builder.setColor(Color.magenta)
                     .setTitle(vote.getUsername() + "さんが" + vote.getServiceName() + "で「たけのこサーバー」に投票しました！")
-                    .setDescription("ありがとうございます！！" + VoteHandler.getVoteCount(Bukkit.getPlayer(UUID.fromString(getUUID(vote.getUsername())))) + "回目の投票です！\n**投票ページリスト**\nMinecraft.jp : https://minecraft.jp/servers/takenoko.ramune.tokyo:45357\nMonocraft.net : https://monocraft.net/servers/AVPgLD1HMJ2mCjD5rFp4");
+                    .setDescription("ありがとうございます！！\n**投票ページリスト**\nMinecraft.jp : https://minecraft.jp/servers/takenoko.ramune.tokyo:45357\nMonocraft.net : https://monocraft.net/servers/AVPgLD1HMJ2mCjD5rFp4");
             TakenokoEssential.getJDA().getNewsChannelById(TakenokoEssential.getConfigFile().VOTE_ANNOUNCE).sendMessageEmbeds(builder.build()).queue();
         } catch (Exception ignored) {
         }
