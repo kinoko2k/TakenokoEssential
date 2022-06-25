@@ -77,7 +77,7 @@ public class SideBarManager {
         sb.addLine(ChatColor.RED + "♡ " + ChatColor.GRAY + Math.floor(player.getHealth()) + ChatColor.DARK_GRAY + "/" + ChatColor.GRAY + Math.floor(player.getMaxHealth()));
         sb.addLine(player.getPing() + "ms " + ChatColor.GRAY + "レイテンシ");
         sb.addBlankLine();
-        sb.addLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "サーバー " + ChatColor.DARK_GREEN + ChatColor.BOLD + "> " + ChatColor.GREEN + ChatColor.BOLD.toString() + TakenokoEssential.getConfigFile().SIDEBAR + "サーバー");
+        sb.addLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "サーバー " + ChatColor.DARK_GREEN + ChatColor.BOLD + "> " + ChatColor.GREEN + ChatColor.BOLD.toString() + Bukkit.getServer().getMotd() + "サーバー");
         sb.addLine(String.valueOf(Math.round(Bukkit.getServer().getTPS()[0])) + ChatColor.GRAY + " ティック毎秒");
         sb.addLine(player.getLocation().getBlock().getBiome().toString().toLowerCase().replace("_", " ") + ChatColor.GRAY + "バイオーム");
         sb.addBlankLine();

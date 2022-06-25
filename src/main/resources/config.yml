@@ -7,8 +7,6 @@ config:
     username: mc
     password: password
 
-  sidebar: "サバイバル"
-
   vote-reward:
     enable: true
 
