@@ -21,7 +21,6 @@ public final class TakenokoEssential extends JavaPlugin {
     private static JavaPlugin plugin;
     private static Config config;
     private static LuckPerms luckperms;
-    private static JDABuilder jdaBuilder;
     private static JDA jda;
 
     @Override
@@ -30,7 +29,7 @@ public final class TakenokoEssential extends JavaPlugin {
         saveDefaultConfig();
         config = new Config(getConfig());
         try {
-            jdaBuilder = JDABuilder.createDefault(config.TOKEN);
+            JDABuilder jdaBuilder = JDABuilder.createDefault(config.TOKEN);
             jda = jdaBuilder.build();
             jda.awaitReady();
             getLogger().info("Successfully login discord bot");
