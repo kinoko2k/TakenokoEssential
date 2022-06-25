@@ -8,7 +8,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import toyko.ramune.takenokoessential.TakenokoEssential;
-import toyko.ramune.takenokoessential.database.DatabaseManager;
 import toyko.ramune.takenokoessential.menu.MenuHandler;
 import toyko.ramune.takenokoessential.prefix.PrefixHandler;
 

@@ -1,7 +1,5 @@
 package toyko.ramune.takenokoessential.database;
 
-import org.bukkit.entity.Player;
-
 public class DatabaseManager {
 
     public static void createTables() {
