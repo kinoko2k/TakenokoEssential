@@ -126,7 +126,6 @@ public class MenuHandler implements Listener {
         inventory.setItem(12, Item.getVote());
         inventory.setItem(14, Item.getLobbyServer());
         inventory.setItem(15, Item.getSurvivalServer());
-        inventory.setItem(16, Item.getCreativeServer());
         if (TakenokoEssential.getConfigFile().CREATIVE_SERVER_MODE_ENABLE) {
             inventory.setItem(21, Item.getCreateClaims());
             inventory.setItem(22, Item.getDeleteClaims());
