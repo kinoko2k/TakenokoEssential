@@ -14,6 +14,9 @@ public class AnnounceManager {
         if (TakenokoEssential.getConfigFile().ANNOUNCE_SITTEMASITAKA) {
             runSittemasitaka(plugin);
         }
+        if (TakenokoEssential.getConfigFile().ANNOUNCE_SERVER_RULE) {
+            runServerRuleAnnounce(plugin);
+        }
     }
     private void runSittemasitaka(JavaPlugin plugin) {
         Bukkit.getScheduler().runTaskTimerAsynchronously(plugin, () -> {
@@ -29,5 +32,14 @@ public class AnnounceManager {
                 player.sendMessage(ChatColor.GREEN + "[サーバー] 毎日午前3時に自動バックアップが入ります。バックアップ中はサーバー停止するので注意してください");
             }));
         }, 12000, 12000);
+    }
+    
+    private void runServerRuleAnnounce(JavaPlugin plugin) {
+        Bukkit.getScheduler().runTaskTimerAsynchronously(plugin, () -> {
+            Bukkit.getOnlinePlayers().forEach((player -> {
+                player.sendMessage(ChatColor.AQUA + "[サーバー] このサーバーでのルールは確認しましたか? 今すぐ確認しよう!" + 
+                                   "\n " + ChatColor.YELLOW + "https://takenoko.ramune.tokyo/rule/");
+            }));
+        }, 18000, 12000);
     }
 }
