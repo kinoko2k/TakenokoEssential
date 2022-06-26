@@ -48,6 +48,6 @@ public class AnnounceManager {
                 player.sendMessage(ChatColor.AQUA + "[サーバー] このサーバーでのルールは確認しましたか? 今すぐ確認しよう!" + 
                                    "\n " + ChatColor.YELLOW + "https://takenoko.ramune.tokyo/rule/");
             }));
-        }, 18000, 12000);
+        }, 14000, 12000);
     }
 }
