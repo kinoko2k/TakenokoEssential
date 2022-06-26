@@ -17,6 +17,7 @@ config:
   announce:
     server-restart: true
     sittemasitaka: false
+    server-rule: true
 
   spawn-location:
     force-teleport: false
