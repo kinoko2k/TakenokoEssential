@@ -37,7 +37,8 @@ public class AnnounceManager {
     private void runServerRuleAnnounce(JavaPlugin plugin) {
         Bukkit.getScheduler().runTaskTimerAsynchronously(plugin, () -> {
             Bukkit.getOnlinePlayers().forEach((player -> {
-                player.sendMessage(ChatColor.AQUA + "[サーバー] サーバーには、ルールが定めてあります！知らなかったでは済まされません！https://takenoko.ramune.tokyo/rule/");
+                player.sendMessage(ChatColor.AQUA + "[サーバー] このサーバーでのルールは確認しましたか? 今すぐ確認しよう!" + 
+                                   "\n " + ChatColor.YELLOW + "https://takenoko.ramune.tokyo/rule/");
             }));
         }, 18000, 12000);
     }
