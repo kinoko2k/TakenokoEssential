@@ -77,11 +77,10 @@ public class SideBarManager {
         sb.addBlankLine();
         sb.addLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "プレイヤー " + ChatColor.DARK_GREEN + ChatColor.BOLD.toString() + ">");
         sb.addLine(ChatColor.AQUA + player.getName());
-        sb.addLine(ChatColor.RED + "♡ " + ChatColor.GRAY + Math.floor(player.getHealth()) + ChatColor.DARK_GRAY + "/" + ChatColor.GRAY + Math.floor(player.getMaxHealth()));
-        sb.addLine(player.getPing() + "ms " + ChatColor.GRAY + "レイテンシ");
+        sb.addLine(ChatColor.RED + "♡ " + ChatColor.WHITE + Math.floor(player.getHealth()) + ChatColor.GRAY + "/" + ChatColor.WHITE + Math.floor(player.getMaxHealth()));
+        sb.addLine(ChatColor.YELLOW + "⚡ " + ChatColor.WHITE + player.getFoodLevel() + ChatColor.GRAY + "/" + ChatColor.WHITE + 20);
         sb.addBlankLine();
         sb.addLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "サーバー " + ChatColor.DARK_GREEN + ChatColor.BOLD + "> " + ChatColor.GREEN + ChatColor.BOLD.toString() + Bukkit.getServer().getMotd() + "サーバー");
-        sb.addLine(String.valueOf(Math.round(Bukkit.getServer().getTPS()[0])) + ChatColor.GRAY + " ティック毎秒");
         sb.addLine(player.getLocation().getBlock().getBiome().toString().toLowerCase().replace("_", " ") + ChatColor.GRAY + "バイオーム");
         sb.addBlankLine();
         sb.addLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "ヒント " + ChatColor.DARK_GREEN + ChatColor.BOLD.toString() + ">");

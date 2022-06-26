@@ -28,6 +28,7 @@ public class PlayerTabManager {
                         "\n" +
                         "\n" + ChatColor.GREEN + ChatColor.BOLD.toString() + "たけのこサーバー" +
                         "\n" + ChatColor.GRAY + Bukkit.getServer().getMotd() + "サーバー" +
+                        "\n" + ChatColor.AQUA + String.valueOf(Math.round(Bukkit.getServer().getTPS()[0])) + ChatColor.GRAY + " ティック毎秒  " + player.getPing() + "ms " + ChatColor.GRAY + "レイテンシ" +
                         "\n" +
                         "\n" + ChatColor.AQUA + Bukkit.getOnlinePlayers().size() + ChatColor.WHITE + " オンラインプレイヤー" +
                         "\n");
