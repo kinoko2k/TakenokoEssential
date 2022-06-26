@@ -16,6 +16,8 @@ import toyko.ramune.takenokoessential.playtime.PlaytimeRunner;
 import toyko.ramune.takenokoessential.scoreboard.PlayerTabManager;
 import toyko.ramune.takenokoessential.scoreboard.SideBarManager;
 
+import java.io.File;
+
 public final class TakenokoEssential extends JavaPlugin {
 
     private static JavaPlugin plugin;
@@ -26,32 +28,21 @@ public final class TakenokoEssential extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
-        saveDefaultConfig();
-        config = new Config(getConfig());
-        try {
-            JDABuilder jdaBuilder = JDABuilder.createDefault(config.TOKEN);
-            jda = jdaBuilder.build();
-            jda.awaitReady();
-            getLogger().info("Successfully login discord bot");
-            getLogger().info("Login as " + jda.getSelfUser().getName() + " / " + jda.getSelfUser().getId());
-        } catch (Exception e) {
-            getLogger().warning("Couldn't login discord bot");
-            getLogger().warning("Bot Token was wrong?");
-        }
-        new ListenerHandler(this);
-        new CommandHandler(this);
-        RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
-        if (provider != null) {
-            luckperms = provider.getProvider();
-            getLogger().info("Luckperms Connected!!");
-        }
-        MySQL.connect();
-        DatabaseManager.createTables();
+        initializeConfig();
+        setupListener();
+
+        setupJDA();
+        setupLuckPerms();
+
         getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
-        new PlaytimeRunner().run();
+        initializeDatabase();
+
         new AnnounceManager(this);
+        new PlaytimeRunner().run();
         SideBarManager.startShowTask();
         PlayerTabManager.startShowTask();
+
+
         getLogger().info("The plugin has been enabled.");
     }
 
@@ -63,6 +54,44 @@ public final class TakenokoEssential extends JavaPlugin {
         } catch (Exception ignored) {
         }
         getLogger().info("The plugin has been disabled.");
+    }
+
+    private void setupListener() {
+        new ListenerHandler(this);
+        new CommandHandler(this);
+    }
+
+    private void initializeConfig() {
+        saveDefaultConfig();
+        getConfig().options().copyDefaults(true);
+        saveConfig();
+        config = new Config(getConfig());
+    }
+
+    private void setupJDA() {
+        try {
+            JDABuilder jdaBuilder = JDABuilder.createDefault(config.TOKEN);
+            jda = jdaBuilder.build();
+            jda.awaitReady();
+            getLogger().info("Successfully login discord bot");
+            getLogger().info("Login as " + jda.getSelfUser().getName() + " / " + jda.getSelfUser().getId());
+        } catch (Exception e) {
+            getLogger().warning("Couldn't login discord bot");
+            getLogger().warning("Bot Token was wrong?");
+        }
+    }
+
+    private void setupLuckPerms() {
+        RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
+        if (provider != null) {
+            luckperms = provider.getProvider();
+            getLogger().info("Luckperms Connected!!");
+        }
+    }
+
+    private void initializeDatabase() {
+        MySQL.connect();
+        DatabaseManager.createTables();
     }
 
     public static JavaPlugin getInstance() {
