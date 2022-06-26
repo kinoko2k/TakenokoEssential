@@ -14,6 +14,9 @@ public class AnnounceManager {
         if (TakenokoEssential.getConfigFile().ANNOUNCE_SITTEMASITAKA) {
             runSittemasitaka(plugin);
         }
+        if (TakenokoEssential.getConfigFile().ANNOUNCE_SERVER_RULE) {
+            runServerRuleAnnounce(plugin);
+        }
     }
     private void runSittemasitaka(JavaPlugin plugin) {
         Bukkit.getScheduler().runTaskTimerAsynchronously(plugin, () -> {
@@ -31,7 +34,7 @@ public class AnnounceManager {
         }, 12000, 12000);
     }
     
-        private void runServerRestartAnnounce(JavaPlugin plugin) {
+        private void runServerRuleAnnounce(JavaPlugin plugin) {
         Bukkit.getScheduler().runTaskTimerAsynchronously(plugin, () -> {
             Bukkit.getOnlinePlayers().forEach((player -> {
                 player.sendMessage(ChatColor.AQUA + "[サーバー] サーバーには、ルールが定めてあります！知らなかったでは済まされません！https://takenoko.ramune.tokyo/rule/");
