@@ -12,7 +12,7 @@ public class Config {
 
     public double SPAWN_LOCATION_X, SPAWN_LOCATION_Y, SPAWN_LOCATION_Z;
 
-    public boolean ANNOUNCE_SERVER_RESTART, ANNOUNCE_SITTEMASITAKA ,VOTE_REWARD_ENABLE, SPAWN_LOCATION_FORCE_TELEPORT, CREATIVE_SERVER_MODE_ENABLE;
+    public boolean ANNOUNCE_SERVER_RESTART, ANNOUNCE_SITTEMASITAKA ,ANNOUNCE_SERVER_RULE ,VOTE_REWARD_ENABLE, SPAWN_LOCATION_FORCE_TELEPORT, CREATIVE_SERVER_MODE_ENABLE;
 
     public Config(FileConfiguration config) {
         this.config = config;
@@ -30,6 +30,7 @@ public class Config {
         VOTE_ANNOUNCE                   = config.getString("config.discord.vote-announce");
         ANNOUNCE_SERVER_RESTART         = config.getBoolean("config.announce.server-restart");
         ANNOUNCE_SITTEMASITAKA          = config.getBoolean("config.announce.sittemasitaka");
+        ANNOUNCE_SERVER_RULE            = config.getBoolean("config.announce.server-rule");
         SPAWN_LOCATION_FORCE_TELEPORT   = config.getBoolean("config.spawn-location.force-teleport");
         SPAWN_LOCATION_WORLD            = config.getString("config.spawn-location.world");
         SPAWN_LOCATION_X                = config.getDouble("config.spawn-location.x");
