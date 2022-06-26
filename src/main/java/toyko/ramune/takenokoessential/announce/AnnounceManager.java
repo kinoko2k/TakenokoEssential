@@ -21,7 +21,7 @@ public class AnnounceManager {
     private void runSittemasitaka(JavaPlugin plugin) {
         Bukkit.getScheduler().runTaskTimerAsynchronously(plugin, () -> {
             Bukkit.getOnlinePlayers().forEach((player -> {
-                player.sendMessage(ChatColor.AQUA + "[サーバー] 知ってましたか? /sethomeで立っている位置を保存できて、/homeでテレポートできます!! 有効活用しよう!");
+                player.sendMessage(ChatColor.AQUA + "[サーバー] 知ってましたか? " + ChatColor.AQUA + ChatColor.BOLD.toString() + "/sethome" + ChatColor.AQUA + "で立っている位置を保存できて、" + ChatColor.AQUA + ChatColor.BOLD.toString() + "/home" + ChatColor.AQUA + "でテレポートできます!! 有効活用しよう!");
             }));
         }, 6000, 12000);
     }
