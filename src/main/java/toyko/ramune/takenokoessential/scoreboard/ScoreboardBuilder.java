@@ -11,8 +11,8 @@ import java.util.Collections;
 
 public class ScoreboardBuilder {
 
-    private String title, displayName;
-    private DisplaySlot displaySlot;
+    private final String title, displayName;
+    private final DisplaySlot displaySlot;
     private final ArrayList<String> lines = new ArrayList<>();
 
     public ScoreboardBuilder(String title, DisplaySlot displaySlot, String displayName) {
