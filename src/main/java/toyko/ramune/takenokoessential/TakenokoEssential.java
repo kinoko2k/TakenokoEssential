@@ -16,8 +16,6 @@ import toyko.ramune.takenokoessential.playtime.PlaytimeRunner;
 import toyko.ramune.takenokoessential.scoreboard.PlayerTabManager;
 import toyko.ramune.takenokoessential.scoreboard.SideBarManager;
 
-import java.io.File;
-
 public final class TakenokoEssential extends JavaPlugin {
 
     private static JavaPlugin plugin;
