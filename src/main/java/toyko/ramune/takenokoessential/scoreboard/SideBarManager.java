@@ -78,7 +78,7 @@ public class SideBarManager {
         sb.addLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "プレイヤー " + ChatColor.DARK_GREEN + ChatColor.BOLD.toString() + ">");
         sb.addLine(ChatColor.AQUA + player.getName());
         sb.addLine(ChatColor.RED + "♡ " + ChatColor.WHITE + Math.floor(player.getHealth()) + ChatColor.GRAY + "/" + ChatColor.WHITE + Math.floor(player.getMaxHealth()));
-        sb.addLine(ChatColor.YELLOW + "⚡ " + ChatColor.WHITE + player.getFoodLevel() + ChatColor.GRAY + "/" + ChatColor.WHITE + 20);
+        sb.addLine(ChatColor.GOLD + "\uD83C\uDF56 " + ChatColor.WHITE + player.getFoodLevel() + ChatColor.GRAY + "/" + ChatColor.WHITE + 20);
         sb.addBlankLine();
         sb.addLine(ChatColor.GREEN + ChatColor.BOLD.toString() + "サーバー " + ChatColor.DARK_GREEN + ChatColor.BOLD + "> " + ChatColor.GREEN + ChatColor.BOLD.toString() + Bukkit.getServer().getMotd() + "サーバー");
         sb.addLine(player.getLocation().getBlock().getBiome().toString().toLowerCase().replace("_", " ") + ChatColor.GRAY + "バイオーム");
