@@ -34,7 +34,7 @@ public class SideBarManager {
             ChatColor.DARK_GREEN + ChatColor.BOLD.toString() + "> " + ChatColor.GREEN + "こサ" + ChatColor.DARK_GREEN + " <",
             ChatColor.DARK_GREEN + ChatColor.BOLD.toString() + "> " + ChatColor.GREEN + "" + ChatColor.DARK_GREEN + " <"
     ));
-    private static ArrayList<String> lines = new ArrayList<>(Arrays.asList(
+    private static final ArrayList<String> lines = new ArrayList<>(Arrays.asList(
             ChatColor.GREEN + ChatColor.BOLD.toString() + "--------------------",
             ChatColor.GREEN + ChatColor.BOLD.toString() + "--------------------",
             ChatColor.DARK_GREEN + ChatColor.BOLD.toString() + "--------------------",
