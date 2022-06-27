@@ -19,5 +19,6 @@ public class ListenerHandler {
         plm.registerEvents(new PlayerRespawnListener(), plugin);
         plm.registerEvents(new PlayerDropItemListener(), plugin);
         plm.registerEvents(new PlayerQuitListener(), plugin);
+        plm.registerEvents(new PlayerLoginListener(), plugin);
     }
 }

@@ -19,6 +19,10 @@ config:
     sittemasitaka: false
     server-rule: true
 
+  playtime-limiter:
+    enable: false
+    limited-playtime-minutes: 15
+
   spawn-location:
     force-teleport: false
     world: world
