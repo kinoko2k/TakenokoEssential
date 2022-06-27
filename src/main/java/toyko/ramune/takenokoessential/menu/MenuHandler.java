@@ -70,6 +70,20 @@ public class MenuHandler implements Listener {
                 player.sendMessage(ChatColor.RED+"サーバー接続にエラーが発生しました");
             }
             player.closeInventory();
+        } else if (displayName.equals(Item.getOneBlockServer().getItemMeta().getDisplayName())) {
+            try {
+                ByteArrayOutputStream b = new ByteArrayOutputStream();
+                DataOutputStream out = new DataOutputStream(b);
+                out.writeUTF("Connect");
+                out.writeUTF("oneblock");
+                player.sendPluginMessage(TakenokoEssential.getInstance(), "BungeeCord", b.toByteArray());
+                b.close();
+                out.close();
+            }
+            catch (Exception e) {
+                player.sendMessage(ChatColor.RED+"サーバー接続にエラーが発生しました");
+            }
+            player.closeInventory();
         }
     }
 
@@ -98,6 +112,7 @@ public class MenuHandler implements Listener {
         inventory.setItem(12, Item.getVote());
         inventory.setItem(14, Item.getLobbyServer());
         inventory.setItem(15, Item.getSurvivalServer());
+        inventory.setItem(16, Item.getOneBlockServer());
         return inventory;
     }
 }

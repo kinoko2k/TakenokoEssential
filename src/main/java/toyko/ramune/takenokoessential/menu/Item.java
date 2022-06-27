@@ -103,12 +103,12 @@ public class Item {
         return item;
     }
 
-    public static ItemStack getCreativeServer() {
-        ItemStack item = new ItemStack(Material.GOLD_BLOCK);
+    public static ItemStack getOneBlockServer() {
+        ItemStack item = new ItemStack(Material.BRICKS);
         ItemMeta itemMeta = item.getItemMeta();
         ArrayList<String> lore = new ArrayList<>();
-        itemMeta.setDisplayName(ChatColor.GREEN + "クリエイティブサーバーに移動");
-        lore.add(ChatColor.LIGHT_PURPLE + "クリエイティブサーバーに移動します");
+        itemMeta.setDisplayName(ChatColor.GREEN + "ワンブロックサーバーに移動");
+        lore.add(ChatColor.LIGHT_PURPLE + "ワンブロックサーバーに移動します");
         lore.add(ChatColor.YELLOW + "");
         lore.add(ChatColor.YELLOW + "右クリックで移動");
         itemMeta.setLore(lore);
