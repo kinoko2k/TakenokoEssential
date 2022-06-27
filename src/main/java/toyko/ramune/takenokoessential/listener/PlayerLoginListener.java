@@ -17,7 +17,7 @@ public class PlayerLoginListener implements Listener {
         if (!TakenokoEssential.getConfigFile().PLAYTIME_LIMITER_ENABLE) {
             return;
         }
-        if (TakenokoEssential.getConfigFile().PLAYTIME_LIMITER_LIMITED_PLAYTIME_MINUTES <= playTime) {
+        if (TakenokoEssential.getConfigFile().PLAYTIME_LIMITER_LIMITED_PLAYTIME_MINUTES >= playTime) {
             event.setResult(PlayerLoginEvent.Result.KICK_OTHER);
             event.setKickMessage(ChatColor.RED + "このサーバーに参加するには" + TakenokoEssential.getConfigFile().PLAYTIME_LIMITER_LIMITED_PLAYTIME_MINUTES + "分以上のたけのこサーバー全体のプレイタイムが必要です。"
                     + "\n必要なプレイタイム  " + playTime + ChatColor.GRAY + "/" + ChatColor.RED + TakenokoEssential.getConfigFile().PLAYTIME_LIMITER_LIMITED_PLAYTIME_MINUTES);
