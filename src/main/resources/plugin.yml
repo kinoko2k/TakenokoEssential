@@ -7,3 +7,5 @@ softdepend: ['BungeeTabListPlus', 'Votifier']
 commands:
   menu:
     description: open Menu
+  hat:
+    description: hat
